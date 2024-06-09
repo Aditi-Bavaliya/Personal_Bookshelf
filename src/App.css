@@ -1,38 +1,144 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-button, .bookshelf-link {
+  padding: 10px;
+  background-color: #9a4cdf;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.search-button:hover, .bookshelf-link:hover {
+  background-color: #8a35d5;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.book-card {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.book-card h3 {
+  margin: 0;
+  font-size: 1.2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.book-card p {
+  margin: 10px 0;
+  color: #555;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.book-card button {
+  padding: 10px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.book-card button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bookshelf-page {
+  padding: 20px;
+}
+
+.bookshelf-page h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.bookshelf-page p {
+  color: #555;
+}
+
+a.back-link {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  width: 200px;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a.back-link:hover {
+  background-color: #c82333;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .search-bar-container {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  input[type="text"] {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 769px) {
+  .search-bar-container {
+    justify-content: center;
+    margin: 20px auto; /* Center the search bar horizontally */
+    max-width: 600px; /* Limit the maximum width of the search bar */
+  }
+
+  input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
   }
 }

@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// import './App.css';
 
+// function App() {
+//   return (
+//     <div className="navbar">
+//       <input type="text" placeholder='Search....' />
+//       <button className="bookshelf">My BookShelf</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BookSearchPage from './pages/BookSearchPage';
+import BookshelfPage from './pages/BookshelfPage';
+import './App.css';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<BookSearchPage />} />
+        <Route path="/bookshelf" element={<BookshelfPage />} />
+      </Routes>
+    </Router>
   );
 }
 
